@@ -122,10 +122,11 @@ Le projet suit une architecture en 3 couches garantissant la séparation des res
 #### Hiérarchie des Véhicules
 
 <div align="center">
-  <img src="out/A_V/Hierarchie_Vehicules.png" alt="Hiérarchie des Véhicules" width="700">
+  <img src="out\A_v\Hierarchie_Vehicules.png" alt="Hiérarchie des Véhicules" width="700">
   <br>
   <em>Figure 4 : Hiérarchie des Véhicules</em>
 </div>
+
 
 | Type | Capacité Max | Attributs Spécifiques | Usage Recommandé |
 |------|--------------|----------------------|------------------|
