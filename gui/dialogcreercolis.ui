@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogCreerColis</class>
+ <widget class="QDialog" name="DialogCreerColis">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>340</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Créer un Colis</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+     QDialog {
+       background-color: #1e1e1e;
+       color: #e0e0e0;
+     }
+     QLabel {
+       color: #e0e0e0;
+       font-size: 13px;
+     }
+     QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+       background-color: #252525;
+       color: #e0e0e0;
+       border: 1px solid #3a3a3a;
+       border-radius: 3px;
+       padding: 6px;
+       font-size: 13px;
+     }
+     QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus {
+       border: 1px solid #0d47a1;
+     }
+     QComboBox::drop-down {
+       border: none;
+     }
+     QComboBox::down-arrow {
+       image: none;
+       border-left: 5px solid transparent;
+       border-right: 5px solid transparent;
+       border-top: 5px solid #e0e0e0;
+       margin-right: 5px;
+     }
+     QPushButton {
+       background-color: #2e7d32;
+       color: white;
+       border: none;
+       border-radius: 3px;
+       padding: 8px 16px;
+       font-weight: bold;
+       font-size: 13px;
+     }
+     QPushButton:hover {
+       background-color: #388e3c;
+     }
+     QPushButton:pressed {
+       background-color: #1b5e20;
+     }
+     QPushButton#btnAnnuler {
+       background-color: #424242;
+       border: 1px solid #616161;
+     }
+     QPushButton#btnAnnuler:hover {
+       background-color: #616161;
+     }
+     QPushButton#btnAnnuler:pressed {
+       background-color: #303030;
+     }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="labelTitre">
+     <property name="text">
+      <string>Nouveau Colis</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+        QLabel {
+          font-size: 16px;
+          font-weight: bold;
+          color: #e0e0e0;
+          padding-bottom: 8px;
+        }
+      </string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="horizontalSpacing">
+      <number>10</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>10</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelType">
+       <property name="text">
+        <string>Type:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboType">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>32</height>
+        </size>
+       </property>
+       <item>
+        <property name="text">
+         <string>Standard</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fragile</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Réfrigéré</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Express</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelDescription">
+       <property name="text">
+        <string>Description:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="editDescription">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="placeholderText">
+        <string>Ex: Colis de documents</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelMasse">
+       <property name="text">
+        <string>Masse (kg):</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QDoubleSpinBox" name="spinMasse">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="minimum">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>500.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelFragilite">
+       <property name="text">
+        <string>Fragilité:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="comboFragilite">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>32</height>
+        </size>
+       </property>
+       <item>
+        <property name="text">
+         <string>Faible</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Moyen</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Élevé</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelTemperature">
+       <property name="text">
+        <string>Température (°C):</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QDoubleSpinBox" name="spinTemperature">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="minimum">
+        <double>-30.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>10.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.500000000000000</double>
+       </property>
+       <property name="value">
+        <double>4.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAnnuler">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Annuler</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnValider">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>36</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Créer</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

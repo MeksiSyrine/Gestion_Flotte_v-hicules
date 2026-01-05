@@ -1,0 +1,100 @@
+# ========================================
+# PROJET C++/Qt - Gestion Flotte
+# ========================================
+
+# ========== BUILD & COMPILATION ==========
+build/
+cmake-build-*/
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+
+# ========== Qt SPÉCIFIQUE ==========
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+*.autosave
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+Makefile*
+!Makefile.manual
+*.qmlc
+*.jsc
+
+# Qt Creator
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+qtcsettings.cmake
+
+# ========== IDE ==========
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+
+# CLion / IntelliJ
+.idea/
+cmake-build-*/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+
+# ========== SYSTÈME ==========
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+# ========== TEMPORAIRES ==========
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# ========== DÉPENDANCES ==========
+*.lib
+*.pdb
+*.ilk
+
+# ========== TESTS ==========
+Testing/
+*.test
+
+# ========== DOCUMENTATION GÉNÉRÉE ==========
+html/
+latex/
+*.pdf
+!documentation/*.pdf
+
+# ========== GARDER CES FICHIERS ==========
+!CMakeLists.txt
+!Makefile
+!README.md
+!LICENSE
+!.gitignore

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestion de Flotte</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+     QMainWindow {
+       background-color: #1e1e1e;
+       color: #e0e0e0;
+     }
+     QWidget {
+       background-color: #1e1e1e;
+       color: #e0e0e0;
+     }
+     QGroupBox {
+       background-color: #252525;
+       border: 1px solid #3a3a3a;
+       border-radius: 4px;
+       margin-top: 8px;
+       padding-top: 8px;
+       color: #e0e0e0;
+       font-weight: bold;
+     }
+     QGroupBox::title {
+       subcontrol-origin: margin;
+       subcontrol-position: top left;
+       padding: 4px 8px;
+       color: #e0e0e0;
+     }
+     QTableWidget {
+       background-color: #252525;
+       alternate-background-color: #2a2a2a;
+       color: #e0e0e0;
+       gridline-color: #3a3a3a;
+       border: 1px solid #3a3a3a;
+       selection-background-color: #0d47a1;
+       selection-color: white;
+     }
+     QHeaderView::section {
+       background-color: #2d2d2d;
+       color: #e0e0e0;
+       padding: 6px;
+       border: none;
+       border-right: 1px solid #3a3a3a;
+       border-bottom: 1px solid #3a3a3a;
+       font-weight: bold;
+     }
+     QMenuBar {
+       background-color: #252525;
+       color: #e0e0e0;
+     }
+     QMenuBar::item:selected {
+       background-color: #0d47a1;
+     }
+     QMenu {
+       background-color: #252525;
+       color: #e0e0e0;
+       border: 1px solid #3a3a3a;
+     }
+     QMenu::item:selected {
+       background-color: #0d47a1;
+     }
+     QStatusBar {
+       background-color: #252525;
+       color: #e0e0e0;
+     }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>8</number>
+    </property>
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="rightMargin">
+     <number>8</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="labelTitre">
+      <property name="text">
+       <string>SYSTÈME DE GESTION DE FLOTTE</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+         QLabel {
+           font-size: 18px;
+           font-weight: bold;
+           padding: 12px;
+           background-color: #252525;
+           color: #e0e0e0;
+           border-bottom: 2px solid #0d47a1;
+         }
+       </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="toolbarLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btnCreerVehicule">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Créer Véhicule</string>
+        </property>
+        <property name="toolTip">
+         <string>Ajouter un nouveau véhicule</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+           QPushButton {
+             background-color: #2e7d32;
+             color: white;
+             border: none;
+             border-radius: 3px;
+             padding: 8px 16px;
+             font-weight: bold;
+           }
+           QPushButton:hover {
+             background-color: #388e3c;
+           }
+           QPushButton:pressed {
+             background-color: #1b5e20;
+           }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnCreerColis">
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Créer Colis</string>
+        </property>
+        <property name="toolTip">
+         <string>Ajouter un nouveau colis</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+           QPushButton {
+             background-color: #2e7d32;
+             color: white;
+             border: none;
+             border-radius: 3px;
+             padding: 8px 16px;
+             font-weight: bold;
+           }
+           QPushButton:hover {
+             background-color: #388e3c;
+           }
+           QPushButton:pressed {
+             background-color: #1b5e20;
+           }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAssigner">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Assigner</string>
+        </property>
+        <property name="toolTip">
+         <string>Assigner un colis à un véhicule</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+           QPushButton {
+             background-color: #0d47a1;
+             color: white;
+             border: none;
+             border-radius: 3px;
+             padding: 8px 16px;
+             font-weight: bold;
+           }
+           QPushButton:hover {
+             background-color: #1565c0;
+           }
+           QPushButton:pressed {
+             background-color: #0a3d91;
+           }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnLivrer">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Livrer</string>
+        </property>
+        <property name="toolTip">
+         <string>Marquer comme livré</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+           QPushButton {
+             background-color: #0d47a1;
+             color: white;
+             border: none;
+             border-radius: 3px;
+             padding: 8px 16px;
+             font-weight: bold;
+           }
+           QPushButton:hover {
+             background-color: #1565c0;
+           }
+           QPushButton:pressed {
+             background-color: #0a3d91;
+           }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSupprimer">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+        <property name="toolTip">
+         <string>Supprimer un véhicule</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+           QPushButton {
+             background-color: #c62828;
+             color: white;
+             border: none;
+             border-radius: 3px;
+             padding: 8px 16px;
+             font-weight: bold;
+           }
+           QPushButton:hover {
+             background-color: #d32f2f;
+           }
+           QPushButton:pressed {
+             background-color: #b71c1c;
+           }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDetails">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Détails</string>
+        </property>
+        <property name="toolTip">
+         <string>Afficher les détails</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+           QPushButton {
+             background-color: #424242;
+             color: white;
+             border: 1px solid #616161;
+             border-radius: 3px;
+             padding: 8px 16px;
+             font-weight: bold;
+           }
+           QPushButton:hover {
+             background-color: #616161;
+           }
+           QPushButton:pressed {
+             background-color: #303030;
+           }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QGroupBox" name="groupVehicules">
+       <property name="title">
+        <string>Véhicules de la Flotte</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTableWidget" name="tableVehicules">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nom</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>État</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Capacité</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Charge</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nb Colis</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupColis">
+       <property name="title">
+        <string>Colis en Attente d'Assignation</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="tableColisAttente">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <column>
+           <property name="text">
+            <string>Index</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Description</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Masse (kg)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Détails</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuAide">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="actionAPropos"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuAide"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAPropos">
+   <property name="text">
+    <string>À propos</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
